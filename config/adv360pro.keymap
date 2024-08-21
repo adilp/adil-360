@@ -172,7 +172,7 @@
             tapping-term-ms = <100>;
             quick-tap-ms = <200>;
             flavor = "tap-unless-interrupted";
-            hold-trigger-key-positions = <30>;
+            hold-trigger-key-positions = <46>;
         };
     };
 
@@ -181,11 +181,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2                   &kp N3    &kp N4     &kp N5  &tog 1                                                                            &mo 3  &kp N6  &kp N7    &kp N8        &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W                    &kp E     &kp R      &kp T   &none                                                                             &none  &kp Y   &kp U     &kp I         &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &hrm_shift LEFT_SHIFT S  &kp D     &kp F      &kp G   &none             &kp LCTRL  &kp LALT            &kp LGUI   &kp RCTRL             &none  &kp H   &kp J     &kp K         &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X                    &kp C     &kp V      &kp B                                &kp HOME            &kp PG_UP                               &kp N   &kp M     &kp COMMA     &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE  &trans                   &kp LEFT  &kp RIGHT                  &kp BSPC  &mo 1      &kp LEFT_COMMAND    &kp PG_DN  &kp ENTER  &kp SPACE                 &kp DOWN  &kp UP_ARROW  &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL  &kp N1     &kp N2            &kp N3       &kp N4     &kp N5  &tog 1                                                                            &mo 3  &kp N6  &kp N7    &kp N8          &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q      &kp W             &kp E        &kp R      &kp T   &none                                                                             &none  &kp Y   &kp U     &kp I           &kp O     &kp P     &kp BSLH
+&kp ESC    &kp A      &mt LEFT_SHIFT S  &kp D        &kp F      &kp G   &none             &kp LCTRL  &kp LALT            &kp LGUI   &kp RCTRL             &none  &kp H   &kp J     &kp K           &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z      &kp X             &mt LG(C) C  &kp V      &kp B                                &kp HOME            &kp PG_UP                               &kp N   &kp M     &mt LGUI COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2      &kp GRAVE  &trans            &kp LEFT     &kp RIGHT                  &kp BSPC  &mo 1      &kp LEFT_COMMAND    &kp PG_DN  &kp ENTER  &kp SPACE                 &kp DOWN  &kp UP_ARROW    &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
@@ -201,11 +201,11 @@
 
         fn {
             bindings = <
-&kp F1  &kp F2  &kp F3             &kp F4      &kp F5           &kp F6  &tog 1                                                    &mo 3  &kp F7    &kp F8     &kp F9        &kp F10   &kp F11  &kp F12
-&trans  &trans  &trans             &trans      &trans           &trans  &none                                                     &none  &trans    &trans     &trans        &trans    &trans   &trans
-&trans  &trans  &kp K_VOLUME_DOWN  &kp K_MUTE  &kp K_VOLUME_UP  &trans  &none           &trans  &trans    &trans  &trans          &none  &kp LEFT  &kp RIGHT  &kp UP_ARROW  &kp DOWN  &trans   &trans
-&trans  &trans  &trans             &trans      &trans           &trans                          &trans    &trans                         &trans    &trans     &trans        &trans    &trans   &trans
-&trans  &trans  &trans             &trans      &trans                           &trans  &trans  &trans    &trans  &trans  &trans                   &trans     &trans        &trans    &trans   &trans
+&kp F1  &kp F2  &kp F3             &kp F4      &kp F5           &kp F6  &tog 1                                                    &mo 3  &kp F7    &kp F8    &kp F9        &kp F10    &kp F11  &kp F12
+&trans  &trans  &trans             &trans      &trans           &trans  &none                                                     &none  &trans    &trans    &trans        &trans     &trans   &trans
+&trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &trans  &none           &trans  &trans    &trans  &trans          &none  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans   &trans
+&trans  &trans  &trans             &trans      &trans           &trans                          &trans    &trans                         &trans    &trans    &trans        &trans     &trans   &trans
+&trans  &trans  &trans             &trans      &trans                           &trans  &trans  &trans    &trans  &trans  &trans                   &trans    &trans        &trans     &trans   &trans
             >;
         };
 
