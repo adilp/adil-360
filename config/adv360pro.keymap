@@ -29,7 +29,7 @@
         };
 
         layer1 {
-            bindings = <&mo 1>;
+            bindings = <&mo 2>;
             key-positions = <65 70>;
         };
     };
@@ -41,10 +41,138 @@
             bindings =
                 <&macro_press>,
                 <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_1>,
                 <&macro_release>,
                 <&kp LEFT_ALT>;
 
             label = "ALT1";
+        };
+
+        alt2: alt2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_2>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT2";
+        };
+
+        alt3: alt3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_3>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT3";
+        };
+
+        alt4: alt4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT4";
+        };
+
+        alt5: alt5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_5>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT5";
+        };
+
+        alt6: alt6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_6>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT6";
+        };
+
+        alt7: alt7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_7>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT7";
+        };
+
+        alt8: alt8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_8>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT8";
+        };
+
+        alt9: alt9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp NUMBER_9>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT9";
+        };
+    };
+
+    behaviors {
+        hrm_shift: hrm_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <30>;
         };
     };
 
@@ -53,11 +181,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &tog 1                                                                            &mo 3  &kp N6  &kp N7    &kp N8        &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W   &kp E     &kp R      &kp T   &none                                                                             &none  &kp Y   &kp U     &kp I         &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &kp S   &kp D     &kp F      &kp G   &none             &kp LCTRL  &kp LALT            &kp LGUI   &kp RCTRL             &none  &kp H   &kp J     &kp K         &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X   &kp C     &kp V      &kp B                                &kp HOME            &kp PG_UP                               &kp N   &kp M     &kp COMMA     &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE  &trans  &kp LEFT  &kp RIGHT                  &kp BSPC  &mo 1      &kp LEFT_COMMAND    &kp PG_DN  &kp ENTER  &kp SPACE                 &kp DOWN  &kp UP_ARROW  &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL  &kp N1     &kp N2                   &kp N3    &kp N4     &kp N5  &tog 1                                                                            &mo 3  &kp N6  &kp N7    &kp N8        &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q      &kp W                    &kp E     &kp R      &kp T   &none                                                                             &none  &kp Y   &kp U     &kp I         &kp O     &kp P     &kp BSLH
+&kp ESC    &kp A      &hrm_shift LEFT_SHIFT S  &kp D     &kp F      &kp G   &none             &kp LCTRL  &kp LALT            &kp LGUI   &kp RCTRL             &none  &kp H   &kp J     &kp K         &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z      &kp X                    &kp C     &kp V      &kp B                                &kp HOME            &kp PG_UP                               &kp N   &kp M     &kp COMMA     &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2      &kp GRAVE  &trans                   &kp LEFT  &kp RIGHT                  &kp BSPC  &mo 1      &kp LEFT_COMMAND    &kp PG_DN  &kp ENTER  &kp SPACE                 &kp DOWN  &kp UP_ARROW  &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
@@ -65,8 +193,8 @@
             bindings = <
 &kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                                         &mo 3  &kp N6          &kp KP_NUM  &kp KP_EQUAL      &kp KP_DIVIDE      &kp KP_MULTIPLY  &kp MINUS
 &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                                          &none  &kp Y           &kp KP_N7   &kp KP_N8         &kp KP_N9          &kp KP_MINUS     &kp BSLH
-&kp ESC    &alt1      &kp S     &kp D     &kp F      &kp G   &none             &kp LCTRL  &kp LALT    &kp LGUI   &kp RCTRL                  &none  &kp MINUS       &kp EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH    &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                                &kp HOME    &kp PG_UP                                    &kp UNDERSCORE  &kp PLUS    &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE         &kp RSHFT
+&kp ESC    &alt1      &alt2     &alt3     &alt4      &alt5   &none             &kp LCTRL  &kp LALT    &kp LGUI   &kp RCTRL                  &none  &kp MINUS       &kp EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH    &kp SQT
+&kp LSHFT  &alt6      &alt7     &alt8     &alt9      &kp B                                &kp HOME    &kp PG_UP                                    &kp UNDERSCORE  &kp PLUS    &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE         &kp RSHFT
 &mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                  &kp BSPC  &kp DEL    &kp END     &kp PG_DN  &kp ENTER  &kp LEFT_SHIFT                         &kp UP      &kp DOWN          &kp KP_DOT         &kp RBKT         &mo 2
             >;
         };
