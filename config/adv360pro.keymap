@@ -160,6 +160,90 @@
 
             label = "ALT9";
         };
+
+        AeroSwitchLeft: AeroSwitchLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp H>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "AEROSWITCHLEFT";
+        };
+
+        AeroSwitchRight: AeroSwitchRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp L>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "AEROSWITCHRIGHT";
+        };
+
+        AeroSwitchUp: AeroSwitchUp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp J>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "AEROSWITCHUP";
+        };
+
+        AeroSwitchDown: AeroSwitchDown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "AEROSWITCHDOWN";
+        };
+
+        aerroVerticle: aerroVerticle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp SLASH>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "AERROVERTICLE";
+        };
+
+        aerroHorizontal: aerroHorizontal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp COMMA>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "AERROHORIZONTAL";
+        };
     };
 
     behaviors {
@@ -181,21 +265,21 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &tog 1                                                                            &mo 3  &kp N6  &kp N7    &kp N8          &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W   &kp E     &kp R      &kp T   &none                                                                             &none  &kp Y   &kp U     &kp I           &kp O     &kp P     &kp BACKSPACE
-&kp ESC    &kp A      &kp S   &kp D     &kp F      &kp G   &none          &kp LCTRL  &kp LALT            &kp LGUI   &kp LEFT_GUI             &none  &kp H   &kp J     &kp K           &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X   &kp C     &kp V      &kp B                             &kp HOME            &kp PG_UP                                  &kp N   &kp M     &mt LGUI COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE  &trans  &kp LEFT  &kp RIGHT                  &mo 1  &kp ENTER  &kp LEFT_COMMAND    &kp PG_DN  &mo 2         &kp SPACE                 &kp DOWN  &kp UP_ARROW    &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL  &kp N1     &kp N2  &kp N3    &kp N4     &kp N5  &tog 1                                                                                    &mo 3             &kp N6  &kp N7    &kp N8        &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q      &kp W   &kp E     &kp R      &kp T   &none                                                                                     &none             &kp Y   &kp U     &kp I         &kp O     &kp P     &kp BACKSPACE
+&kp ESC    &kp A      &kp S   &kp D     &kp F      &kp G   &aerroVerticle         &kp LCTRL  &kp LALT            &kp LGUI   &kp LEFT_GUI             &aerroHorizontal  &kp H   &kp J     &kp K         &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z      &kp X   &kp C     &kp V      &kp B                                     &kp HOME            &kp PG_UP                                             &kp N   &kp M     &kp COMMA     &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2      &kp GRAVE  &trans  &kp LEFT  &kp RIGHT                          &mo 1  &kp ENTER  &kp LEFT_COMMAND    &kp PG_DN  &mo 2         &kp SPACE                            &kp DOWN  &kp UP_ARROW  &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
         keypad {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                                         &mo 3  &kp N6          &kp KP_NUM  &kp KP_EQUAL      &kp KP_DIVIDE      &kp KP_MULTIPLY  &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                                          &none  &kp Y           &kp KP_N7   &kp KP_N8         &kp KP_N9          &kp KP_MINUS     &kp BSLH
-&kp ESC    &alt1      &alt2     &alt3     &alt4      &alt5   &none             &kp LCTRL  &kp LALT    &kp LGUI   &kp RCTRL                  &none  &kp MINUS       &kp EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH    &kp SQT
-&kp LSHFT  &alt6      &alt7     &alt8     &alt9      &kp B                                &kp HOME    &kp PG_UP                                    &kp UNDERSCORE  &kp PLUS    &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE         &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                  &kp BSPC  &kp DEL    &kp END     &kp PG_DN  &kp ENTER  &kp LEFT_SHIFT                         &kp UP      &kp DOWN          &kp KP_DOT         &kp RBKT         &mo 2
+&kp EQUAL  &kp N1     &kp N2    &kp N3           &kp N4            &kp N5  &trans                                                                         &mo 3  &kp N6          &kp KP_NUM       &kp KP_EQUAL      &kp KP_DIVIDE      &kp KP_MULTIPLY  &kp MINUS
+&kp TAB    &kp Q      &kp W     &kp E            &kp R             &kp T   &none                                                                          &none  &kp Y           &kp KP_N7        &kp KP_N8         &kp KP_N9          &kp KP_MINUS     &kp BSLH
+&kp ESC    &alt1      &alt2     &alt3            &alt4             &alt5   &none             &kp LCTRL  &kp LALT    &kp LGUI   &kp RCTRL                  &none  &kp MINUS       &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH    &kp SQT
+&kp LSHFT  &alt6      &alt7     &alt8            &alt9             &kp B                                &kp HOME    &kp PG_UP                                    &kp UNDERSCORE  &kp PLUS         &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE         &kp RSHFT
+&mo 2      &kp GRAVE  &kp CAPS  &AeroSwitchLeft  &AeroSwitchRight                  &kp BSPC  &kp DEL    &kp END     &kp PG_DN  &kp ENTER  &kp LEFT_SHIFT                         &AeroSwitchDown  &AeroSwitchUp     &kp KP_DOT         &kp RBKT         &mo 2
             >;
         };
 
